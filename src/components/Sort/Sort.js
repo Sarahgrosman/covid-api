@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Sort = ({el,parameter}) => {
+const Sort = ({dataDisplay,text}) => {
   
   return (
     <div>
-      
-       <li>{el.name}:{parameter}</li>
+      <h3>{text}</h3>
+      <div>{dataDisplay}</div>
     </div>
   )
 }

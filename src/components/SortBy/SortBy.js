@@ -30,60 +30,12 @@ const SortBy = ({setParam,param}) => {
   
  return (
     <div>
-        <div>
-        <div>
-        <h3>Most Deaths - All Time</h3>
-        <ul>
-            { sortDeaths.map((el)=>
-    <Sort
-      el={el}
-      parameter={el.deaths}
-     />
-) }
-        </ul>
-        </div>
+       <Sort text={"Most Deaths - All Time"} dataDisplay={sortDeaths.map((el)=> <p>{el.name}:{el.deaths}</p>)}/>
+       <Sort text={"Most Confirmed - All Time"} dataDisplay={sortConfirmed.map((el)=><p>{el.name}:{el.confirmed}</p>)}/>
+       <Sort text={"Most Deaths -Today"} dataDisplay={sortTDeaths.map((el)=><p>{el.name}:{el.deaths}</p>)}/>
+       <Sort text={"Most confirmed - Today"} dataDisplay={sortTConfirmed.map((el)=><p>{el.name}:{el.todayDeaths}</p>)} />
         
-        
-        <div>
-        <h3>Most confirmed - All Time</h3>
-        <ul>
-            { sortConfirmed.map((el)=>
-    <Sort
-      el={el}
-      parameter = {el.confirmed}
-     />
-) }
-        </ul>
-        </div>
-        </div>
-
-        <div>
-        <div>
-        <h3>Most Deaths -Today</h3>
-        <ul>
-            { sortTDeaths.map((el)=>
-    <Sort
-      el={el}
-      parameter={el.todayDeaths}
-     />
-) }
-        </ul>
-        </div>
-        
-        
-        <div>
-        <h3>Most confirmed - Today</h3>
-        <ul>
-            { sortTConfirmed.map((el)=>
-    <Sort
-      el={el}
-      parameter = {el.todayConfirmed}
-     />
-) }
-        </ul>
-        </div>
-        </div>
-    </div>
+   </div>
    
   )
 }
